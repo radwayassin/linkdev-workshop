@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:`: https://api.npoint.io`
+  apiUrl:`https://api.npoint.io`
 };
 
 /*
