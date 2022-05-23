@@ -1,0 +1,44 @@
+.newsItem_card {
+    width: 20em;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+    margin: 1em 0;
+    img {
+        height: 18em;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+    .card-body {
+        .card-title {
+            color: #5E6282;
+            font-weight: 600;
+            height: 6em;
+        }
+        .date {
+            color: #707070;
+            font-size: 0.9em;
+            i {
+                color: #0ECEFF;
+            }
+        }
+        .cat_name {
+            font-size: 0.8em;
+            padding: 0.2em;
+            background-color: #E3E3E3;
+            color: #1f3f4d;
+            border-radius: 10px;
+            width: 7em;
+            text-align: center;
+        }
+        .action_list{
+            list-style: none;
+            display: inline-flex;
+            padding: 0;
+            li{
+                color: #0ECEFF;
+                margin: 0 0.5em;
+            }
+        }
+    }
+}

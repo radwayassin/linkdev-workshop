@@ -1,1 +1,35 @@
-<p>latest-news works!</p>
+<section class="latest_news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="titles">
+                    <h6>Media</h6>
+                    <h1>Top News</h1>
+                </div>
+                <div class="categories">
+                    <ul class="cats_list">
+                        <li class="all_news" (click)="listAllNews()">
+                            All News
+                        </li>
+                        <li *ngFor="let cat of categoriesList?.newsCategory" (click)="selectCategory(cat.id)">
+                            {{cat.name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 d-flex justify-content-center" *ngFor="let newsItem of newsList | slice:0:limit">
+                <app-news-item-card [newsItem]="newsItem" [categoriesList]="categoriesList"></app-news-item-card>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 text-center">
+                <button type="button" class="btn view_all" *ngIf="limit != newsList?.length"
+                    (click)="viewAllNews()">View All News</button>
+                <button type="button" class="btn view_all" *ngIf="limit == newsList?.length"
+                    (click)="limit = 6">View Less</button>
+            </div>
+        </div>
+    </div>
+</section>

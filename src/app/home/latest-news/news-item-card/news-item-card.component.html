@@ -1,0 +1,26 @@
+<div class="card newsItem_card">
+    <img [src]="newsItem?.urlToImage" class="card-img-top" alt="News Item Photo">
+    <div class="card-body">
+        <h6 class="card-title">{{newsItem?.title}}</h6>
+        <p class="date">
+            <i class="fa-regular fa-calendar-minus"></i>
+            {{newsItem?.publishedDate | date :'EEEE d MMMM y'}}
+        </p>
+        <div class="row">
+            <div class="col-6">
+                <p class="cat_name">{{catName}}</p>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <ul class="action_list">
+                   
+                    <li>
+                        <i class="fa-regular fa-heart"></i>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
