@@ -19,5 +19,11 @@
                 box-shadow: none;
             }
         }
+        &.right_nav{
+            @media (max-width:768px) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
     }
 }
