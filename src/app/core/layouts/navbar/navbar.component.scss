@@ -1,3 +1,23 @@
 .main_navbar {
     background-color: #fff;
+    .navbar-toggler{
+        border-color: #198754;
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    .navbar-nav {
+        .nav-item {
+            padding: 0 1rem;
+            .nav-link {
+                color: #000;
+            }
+        }
+        .select_lang {
+            border: 0;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
 }
