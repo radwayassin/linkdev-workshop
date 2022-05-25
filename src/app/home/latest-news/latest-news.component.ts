@@ -9,14 +9,15 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class LatestNewsComponent implements OnInit {
   @Input() categoriesList : Category[] =[];
   @Input() newsList: NewsItem[]= [];
-  @Output() changeCategoryEvent = new EventEmitter<{categoryId: number| null}>();
+  @Output() changeCategoryEvent = new EventEmitter<{categoryId: number}>();
   limit: number = 6;
+  selectedCatIndex:number = 0
   constructor() {}
 
   ngOnInit(): void {
   }
 
-  selectCategory(id: number | null) {
+  selectCategory(id: number) {
     this.limit= 6 ;
     this.changeCategoryEvent.emit({categoryId: id });
   }

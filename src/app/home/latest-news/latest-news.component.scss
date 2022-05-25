@@ -32,6 +32,10 @@
                     background-color: #0ECEFF;
                     color: #fff;
                 }
+                &.active{
+                    background-color: #0ECEFF;
+                    color: #fff;
+                }
             }
         }
         @media (max-width:768px) {

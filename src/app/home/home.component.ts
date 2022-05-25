@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Categories, Category, HighlightBanner, News, NewsItem, Slide, ThingsWeDo } from '../models/home';
+import {
+  Categories, Category,
+  HighlightBanner,
+  News, NewsItem,
+  Slide,
+  ThingsWeDo
+} from '../models/home';
 import { HomeService } from '../services/home-service.service';
 
 @Component({
@@ -18,8 +24,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHighlightsBanner();
-    this.getAllNews();
     this.getCategories();
+    this.getAllNews();
     this.getThingsWeDo();
   }
 
@@ -42,6 +48,7 @@ export class HomeComponent implements OnInit {
   }
 
   mapCategoriesData() {
+
     if (this.newsList.length > 0 && this.categoriesList.length > 0) {
       this.newsList.map((item) => {
         this.categoriesList.map((category) => {
@@ -55,14 +62,19 @@ export class HomeComponent implements OnInit {
 
   getCategories() {
     this.homeService.getNewsCategories().subscribe((res: Categories) => {
-      this.categoriesList = res.newsCategory;
+      // add static option for all news
+      const allNews: Category = { id: NaN, name: 'All News' };
+      this.categoriesList.push(allNews);
+
+      this.categoriesList.push(...res.newsCategory);
+
     }, (error: string) => {
       console.log(error);
     })
   }
 
-  handleChangeCategory(event: { categoryId: number | null }) {
-    if (!event.categoryId) {
+  handleChangeCategory(event: { categoryId: number }) {
+    if (isNaN(event.categoryId)) {
       this.filteredNews = this.newsList;
     } else {
       this.filteredNews = this.newsList.filter((item) => {

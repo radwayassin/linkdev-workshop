@@ -44,6 +44,22 @@
             position: relative;
             top: 12%;
         }
+        @media (max-width:768px) {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            .flex-end,
+            .flex-start {
+                padding: 0.5em;
+                width: auto
+            }
+            .upperPos {
+                bottom: 0;
+            }
+            .centerPos {
+                top: 0;
+            }
+        }
     }
     .card {
         width: 15em;

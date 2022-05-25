@@ -8,10 +8,9 @@
                 </div>
                 <div class="categories">
                     <ul class="cats_list">
-                        <li class="all_news" (click)="selectCategory(null)">
-                            All News
-                        </li>
-                        <li *ngFor="let cat of categoriesList" (click)="selectCategory(cat.id)">
+                        <li *ngFor="let cat of categoriesList; let i = index"
+                            (click)="selectCategory(cat.id); selectedCatIndex = i"
+                            [class.active]="selectedCatIndex === i">
                             {{cat.name}}
                         </li>
                     </ul>
@@ -25,10 +24,9 @@
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-3 text-center">
-                <button type="button" class="btn view_all" *ngIf="newsList.length > limit"
-                    (click)="viewAllNews()">View All News</button>
-                <button type="button" class="btn view_all" *ngIf="limit > 6"
-                    (click)="limit = 6">View Less</button>
+                <button type="button" class="btn view_all" *ngIf="newsList.length > limit" (click)="viewAllNews()">View
+                    All News</button>
+                <button type="button" class="btn view_all" *ngIf="limit > 6" (click)="limit = 6">View Less</button>
             </div>
         </div>
     </div>
