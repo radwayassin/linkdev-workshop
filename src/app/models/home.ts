@@ -31,3 +31,15 @@ export interface Category {
     id: number,
     name: string
 }
+
+export interface ThingsWeDo {
+    title:string,
+    description:string,
+    things:ThingsContent[]
+}
+export interface ThingsContent{
+    title:string,
+    image:string,
+    cssClass:string,
+    postionClass:string;
+}

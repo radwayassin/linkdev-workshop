@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Categories, Category, HighlightBanner, News, NewsItem, Slide} from '../models/home';
-import {HomeService} from '../services/home-service.service';
+import { Component, OnInit } from '@angular/core';
+import { Categories, Category, HighlightBanner, News, NewsItem, Slide, ThingsWeDo } from '../models/home';
+import { HomeService } from '../services/home-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,11 @@ import {HomeService} from '../services/home-service.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  highlightBannerList : Slide[] =[];
+  highlightBannerList: Slide[] = [];
   newsList: NewsItem[] = [];
   filteredNews: NewsItem[] = [];
-  categoriesList:Category[] = [];
-
+  categoriesList: Category[] = [];
+  thingsWeDoData = {} as ThingsWeDo;
   constructor(private homeService: HomeService) {
   }
 
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     this.getHighlightsBanner();
     this.getAllNews();
     this.getCategories();
+    this.getThingsWeDo();
   }
 
   getHighlightsBanner() {
@@ -41,11 +42,11 @@ export class HomeComponent implements OnInit {
   }
 
   mapCategoriesData() {
-    if(this.newsList.length > 0 && this.categoriesList.length > 0) {
-      this.newsList.map((item)=> {
-        this.categoriesList.map((category)=> {
-          if(+item.categoryID === category.id){
-            item.categoryName = category.name ;
+    if (this.newsList.length > 0 && this.categoriesList.length > 0) {
+      this.newsList.map((item) => {
+        this.categoriesList.map((category) => {
+          if (+item.categoryID === category.id) {
+            item.categoryName = category.name;
           }
         });
       });
@@ -70,4 +71,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  getThingsWeDo() {
+    this.homeService.getThingsWeDo().subscribe((res) => {
+      this.thingsWeDoData = res;
+    })
+  }
 }

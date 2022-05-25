@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ThingsWeDo } from 'src/app/models/home';
 
 @Component({
   selector: 'app-things-we-do',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./things-we-do.component.scss']
 })
 export class ThingsWeDoComponent implements OnInit {
-
+  @Input() thingsWeDoData = {} as ThingsWeDo;
   constructor() { }
 
   ngOnInit(): void {

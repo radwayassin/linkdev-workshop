@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Categories, HighlightBanner, News, NewsItem } from '../models/home';
+import { Categories, HighlightBanner, News, NewsItem, ThingsWeDo } from '../models/home';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,10 @@ export class HomeService {
 
   getHighlightBannerData(){
    return this.httpClient.get<HighlightBanner>(`${this.URL}/fee177346e7875554413`);
+  }
+
+  getThingsWeDo(){
+    return this.httpClient.get<ThingsWeDo>(`assets/Json/things_we_do.json`);
   }
 
   getNewsList(){

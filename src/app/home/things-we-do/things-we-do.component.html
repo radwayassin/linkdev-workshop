@@ -1,1 +1,25 @@
-<p>things-we-do works!</p>
+<section class="thing_we_do">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row reshape">
+                    <div class="col-md-4" *ngFor="let thing of thingsWeDoData.things" [class]="thing.cssClass">
+                        <div class="card">
+                            <img [src]="thing.image" alt="things we do" class="card-img">
+                            <div class="card-img-overlay">
+                              <h5 class="card-title">{{thing.title}}</h5>
+                              <a class="read_more"> <i class="fa-solid fa-arrow-right-long"></i> &nbsp; Read more </a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="info">
+                    <h1>{{thingsWeDoData.title}}</h1>
+                    <p>{{thingsWeDoData.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 import { Slide } from './../../models/home';
-import { Component, Input, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AnimationEvent } from "@angular/animations";
 @Component({
@@ -37,7 +37,7 @@ export class HighlightsBannerComponent implements OnInit {
   ]
   indicators: number[] = [3, 2, 1];
   selectedIndex: number = 2;
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
@@ -48,8 +48,7 @@ export class HighlightsBannerComponent implements OnInit {
     if (this.counter < this.times) {
       this.state = (this.state === 'hide' ? 'show' : 'hide');
       this.counter++;
-      // this.times++;
-      this.cdr.detectChanges();
+      this.changeDetectorRef.detectChanges();
     }
   }
   selectOrder(bannerIndex: number) {
@@ -58,7 +57,5 @@ export class HighlightsBannerComponent implements OnInit {
       if (highlightBanner.order == bannerIndex) { index = i }
     });
     this.bannerIndex = index;
-    console.log(this.bannerIndex);
-
   }
 }
