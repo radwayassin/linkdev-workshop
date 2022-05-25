@@ -1,7 +1,13 @@
 .main_navbar {
     background-color: #fff;
     .navbar-toggler{
-        border-color: #198754;
+        border-color: #A6E51C;
+        color: #A6E51C;
+        z-index: 2;
+        &:hover{
+            background-color: #A6E51C;
+            color: #fff;
+        }
         &:focus{
             box-shadow: none;
         }
