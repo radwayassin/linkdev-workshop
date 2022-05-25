@@ -1,3 +1,3 @@
 <app-highlights-banner [highlightBannerList]="highlightBannerList"></app-highlights-banner>
 <app-things-we-do></app-things-we-do>
-<app-latest-news [newsList]="newsList?.News" [categoriesList]="categoriesList"></app-latest-news>
+<app-latest-news [newsList]="filteredNews" [categoriesList]="categoriesList" (changeCategoryEvent)="handleChangeCategory($event)"></app-latest-news>

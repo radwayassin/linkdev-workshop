@@ -6,7 +6,7 @@ import { Categories, HighlightBanner, News, NewsItem } from '../models/home';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeServiceService {
+export class HomeService {
   URL = environment.apiUrl;
   constructor(private httpClient: HttpClient) { }
 
