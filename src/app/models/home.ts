@@ -1,6 +1,6 @@
 export interface Slide {
     id: number,
-    breif: string,
+    brief: string,
     order: number,
     title: string,
     imgurl: string,
@@ -21,7 +21,8 @@ export interface NewsItem {
     urlToImage: string,
     description: string,
     publishedDate: string,
-    showOnHomepage: string
+    showOnHomepage: string,
+    categoryName:string,
 }
 export interface Categories {
     newsCategory: Category[];

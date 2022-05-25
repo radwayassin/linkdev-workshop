@@ -1,1 +1,34 @@
-<p>highlights-banner works!</p>
+<section class="highlight_banner" [ngClass]="bannerIndex == 0 ? 'orange': bannerIndex == 1 ? 'pink' : 'green'">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info">
+                    <h6>{{highlightBannerList[bannerIndex]?.category}}</h6>
+                    <h1>{{highlightBannerList[bannerIndex]?.title}}</h1>
+                    <p>{{highlightBannerList[bannerIndex]?.brief}}</p>
+                    <img class="line" [src]="imgLines[bannerIndex]" alt="Banner Line">
+                    <div class="row">
+                        <div class="col-md-6 col-8 flex-shape">
+                            <button type="button" class="btn find_more">Find out more</button>
+                        </div>
+                        <div class="col-md-6 col-4 flex-shape">
+                            <img src="assets/images/PlayDemo.svg" alt="Play Demo">
+                        </div>
+                    </div>
+                    <ul class="indicators">
+                        <li *ngFor="let indicator of indicators;let i = index" (click)="selectOrder(indicator);selectedIndex = i"
+                            [class.active]="selectedIndex === i"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="banner_imgs">
+                    <img [src]="bannerImages[bannerIndex]" alt="">
+                </div>
+                <a (click)="rotate()" class="animatedBack">
+                    <img [@rotatedState]='state' (@rotatedState.done)="onDone($event)" [src]="animatedImages[bannerIndex]">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

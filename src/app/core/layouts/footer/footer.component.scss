@@ -1,39 +1,32 @@
 .main_footer {
     background: rgb(255, 252, 252);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 90%, rgba(213, 174, 228, 1) 100%);
-
     .footer_info {
         img {
             width: 50%;
         }
-
         .footer_text {
             font-size: 0.9em;
             margin: 1em 0.5em;
         }
     }
-
     h5 {
         font-weight: 700;
     }
-
     .footer_list {
         list-style: none;
         padding: 0;
-
         li {
             color: #5E6282;
             font-weight: 500;
             margin: 0.5em 0;
         }
     }
-
     .social_info {
         .social_list {
             list-style: none;
             display: inline-flex;
             padding: 0;
-
             li {
                 background-color: #fff;
                 height: 40px;
@@ -45,30 +38,23 @@
                 text-align: center;
             }
         }
-
         h5 {
             margin-left: 1em;
             color: #5E6282;
             font-weight: 500;
-
         }
-
         .apps_logos {
             list-style: none;
             display: inline-flex;
             padding: 0;
-
             li {
                 margin: 0.5em;
-
                 img {
                     width: 100%;
-                    border-radius: 25px;
                 }
             }
         }
     }
-
     .copy_right {
         color: #5E6282;
         font-weight: 400;

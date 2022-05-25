@@ -1,0 +1,137 @@
+.highlight_banner {
+    padding: 2em 0;
+    &.orange {
+        h6 {
+            color: #FF7C16;
+        }
+        .info h1 {
+            font-size: 3.5em;
+        }
+    }
+    &.pink {
+        h6 {
+            color: #F215B6;
+        }
+    }
+    &.green {
+        h6 {
+            color: #A6E51C;
+        }
+    }
+    .info {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h6 {
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 3em;
+            color: #181E4B;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+        p {
+            margin-bottom: 0;
+            margin-top: 1em;
+            font-size: 0.9em;
+            color: #5E6282;
+            font-weight: 500;
+        }
+        .line {
+            position: absolute;
+            left: 55%;
+            top: 22%;
+            width: 80%;
+            z-index: -1;
+            @media(max-width:768px) {
+                left: 22%;
+                top: 20%;
+            }
+        }
+        .indicators {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+            li {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin: 0.3em 1em;
+                background-color: #A6E51C;
+                &:first-of-type {
+                    background-color: #F215B6;
+                    &::after {
+                        content: "\f141";
+                        font-family: "Font Awesome\ 5 Free";
+                        font-weight: 900;
+                        position: relative;
+                        top: 5px;
+                        left: 42px;
+                    }
+                }
+                &:last-of-type {
+                    background-color: #FF7C16;
+                    &::before {
+                        content: "\f141";
+                        font-family: "Font Awesome\ 5 Free";
+                        font-weight: 900;
+                        position: relative;
+                        top: 5px;
+                        right: 24px;
+                    }
+                }
+                &.active {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+        .find_more {
+            background-color: #FF7C16;
+            color: #fff;
+            width: 100%;
+            font-size: 1em;
+            font-weight: 300;
+            height: 3em;
+            border-radius: 12px;
+            margin: 1em 0;
+        }
+        .flex-shape {
+            display: flex;
+            align-items: center;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .animatedBack {
+        img {
+            width: 40%;
+            position: absolute;
+            top: -117px;
+            right: -98px;
+            @media(max-width:768px) {
+                width: 47%;
+                top: 70%;
+                right: 0;
+            }
+        }
+    }
+    .banner_imgs {
+        display: flex;
+        justify-content: center;
+        @media(max-width:768px) {
+            justify-content: flex-start;
+        }
+        img {
+            width: 70%;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

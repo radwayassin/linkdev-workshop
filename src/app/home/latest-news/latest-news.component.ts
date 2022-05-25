@@ -1,33 +1,27 @@
-import { NewsItem } from './../../models/home';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Categories, News } from 'src/app/models/home';
+import {Category, NewsItem} from './../../models/home';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-latest-news',
   templateUrl: './latest-news.component.html',
   styleUrls: ['./latest-news.component.scss']
 })
-export class LatestNewsComponent implements OnInit, OnChanges {
-  @Input() categoriesList = {} as Categories;
-  @Input() newsList: NewsItem[] | undefined;
-  filteredNews: NewsItem[] | undefined;
-  limit: number | undefined = 6
-  constructor() { }
+export class LatestNewsComponent implements OnInit {
+  @Input() categoriesList : Category[] =[];
+  @Input() newsList: NewsItem[]= [];
+  @Output() changeCategoryEvent = new EventEmitter<{categoryId: number| null}>();
+  limit: number = 6;
+  constructor() {}
 
   ngOnInit(): void {
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.filteredNews = this.newsList;
+
+  selectCategory(id: number | null) {
+    this.limit= 6 ;
+    this.changeCategoryEvent.emit({categoryId: id });
   }
-  selectCategory(id: number) {
-    this.newsList = this.filteredNews?.filter((newsItem) => {
-      // return newsItem.categoryID.includes(id);
-    })
-  }
-  listAllNews() {
-    this.newsList = this.filteredNews;
-  }
+
   viewAllNews() {
-    this.limit = this.filteredNews?.length;
+    this.limit = this.newsList.length;
   }
 }
