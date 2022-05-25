@@ -17,6 +17,9 @@
             padding: 0 1rem;
             .nav-link {
                 color: #000;
+                &.navigate{
+                    cursor: pointer;
+                }
             }
         }
         .select_lang {

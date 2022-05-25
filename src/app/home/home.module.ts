@@ -7,6 +7,7 @@ import { HighlightsBannerComponent } from './highlights-banner/highlights-banner
 import { ThingsWeDoComponent } from './things-we-do/things-we-do.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { NewsItemCardComponent } from './latest-news/news-item-card/news-item-card.component';
+import { NewsItemDetailsComponent } from './news-item-details/news-item-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NewsItemCardComponent } from './latest-news/news-item-card/news-item-ca
     HighlightsBannerComponent,
     ThingsWeDoComponent,
     LatestNewsComponent,
-    NewsItemCardComponent
+    NewsItemCardComponent,
+    NewsItemDetailsComponent
   ],
   imports: [
     CommonModule,

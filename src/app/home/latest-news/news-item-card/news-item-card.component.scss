@@ -11,9 +11,12 @@
     }
     .card-body {
         .card-title {
-            color: #5E6282;
             font-weight: 600;
             height: 6em;
+            a {
+                text-decoration: none;
+                color: #5E6282;
+            }
         }
         .date {
             color: #707070;
@@ -31,11 +34,11 @@
             width: 7em;
             text-align: center;
         }
-        .action_list{
+        .action_list {
             list-style: none;
             display: inline-flex;
             padding: 0;
-            li{
+            li {
                 color: #0ECEFF;
                 margin: 0 0.5em;
             }
