@@ -19,12 +19,10 @@ export class HomeComponent implements OnInit {
   filteredNews: NewsItem[] = [];
   categoriesList: Category[] = [];
   thingsWeDoData = {} as ThingsWeDo;
-  constructor(private homeService: HomeService) {
-  }
+  constructor(private homeService: HomeService) {}
 
   ngOnInit(): void {
     this.getHighlightsBanner();
-    this.getCategories();
     this.getAllNews();
     this.getThingsWeDo();
   }
@@ -36,11 +34,10 @@ export class HomeComponent implements OnInit {
       console.log(error);
     })
   }
-
   getAllNews() {
     this.homeService.getNewsList().subscribe((res: News) => {
       this.newsList = res.News;
-      this.mapCategoriesData();
+      this.getCategories();
       this.filteredNews = this.newsList;
     }, (error: string) => {
       console.log(error);
@@ -48,7 +45,6 @@ export class HomeComponent implements OnInit {
   }
 
   mapCategoriesData() {
-
     if (this.newsList.length > 0 && this.categoriesList.length > 0) {
       this.newsList.map((item) => {
         this.categoriesList.map((category) => {
@@ -67,7 +63,7 @@ export class HomeComponent implements OnInit {
       this.categoriesList.push(allNews);
 
       this.categoriesList.push(...res.newsCategory);
-
+      this.mapCategoriesData();
     }, (error: string) => {
       console.log(error);
     })
